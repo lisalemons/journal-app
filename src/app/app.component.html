@@ -1,25 +1,126 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="app__container">
+  <div class="app__wrapper">
+    <title class="app__title">
+      Katie's Journal
+    </title>
+
+    <!-- Journal Entries--render -->
+    <mat-toolbar color="primary">
+        <span>Past Entries</span>
+      </mat-toolbar>
+    <mat-card class="journal__container journal__container--render">
+
+      <mat-tab-group>
+        <mat-tab label="Life">
+          <div class="entry__render">
+            <h3 class="entry__title"><strong>Date: </strong> 03/34/2019 </h3>
+            <h3 class="entry__title"><strong>Title: </strong> Life is good</h3>
+          </div>
+        </mat-tab>
+        <mat-tab label="Job">
+          <div class="entry__render">
+            <h3 class="entry__title"><strong>Date: </strong> 03/34/2019 </h3>
+            <h3 class="entry__title"><strong>Title: </strong> Retirement is the goal! </h3>
+            <p class="entry__text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, consequatur fugiat, pariatur, dolorum
+              illo quae nihil reprehenderit aperiam suscipit nam et hic minima quam repudiandae a facere deleniti eaque
+              ea.
+            </p>
+            <p class="entry__text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, consequatur fugiat, pariatur, dolorum
+              illo quae nihil reprehenderit aperiam suscipit nam et hic minima quam repudiandae a facere deleniti eaque
+              ea.
+            </p>
+          </div>
+        </mat-tab>
+        <mat-tab label="Love">
+          <div class="entry__render">
+            <h3 class="entry__title"><strong>Date: </strong> 03/34/2019 </h3>
+            <h3 class="entry__title"><strong>Title: </strong> I love my boos </h3>
+          </div>
+        </mat-tab>
+        <mat-tab label="To Do">
+          <div class="entry__render">
+            <h3 class="entry__title"><strong>Date: </strong> 03/34/2019 </h3>
+            <h3 class="entry__title"><strong>Title: </strong> Today I saw </h3>
+            <ul class="entry__text todo__list-items">
+              <li class="list-item">
+                <mat-checkbox></mat-checkbox> Feed Cats
+              </li>
+              <li class="list-item">
+                <mat-checkbox></mat-checkbox> Feed Self
+              </li>
+              <li class="list-item">
+                <mat-checkbox></mat-checkbox> Feed Lisa
+              </li>
+            </ul>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+    <!-- ./ Journal Entries--render -->
+
+    <!-- Journal Entry Input -->
+    <div class="journal__container journal__container--entry">
+      <!-- Journal Entry Toggle -->
+      <mat-slide-toggle [checked]="isQuickEntry"
+                        color="primary"
+                        (change)="isQuickEntry = !isQuickEntry">
+      {{ isQuickEntry ? 'Quick' : 'Full' }} Entry
+      </mat-slide-toggle>
+      <!-- ./ Journal Entry Toggle -->
+      <!-- Journal Entry Input--quick  -->
+      <ng-container *ngIf="isQuickEntry">
+        <mat-toolbar color="primary">
+          <h2 class="entry__container-name">Quick Entry</h2>
+        </mat-toolbar>
+        <mat-card>
+          <div class="entry__container entry__container--quick">
+            <div class="entry__container-emojis entry__container-emojis--quick">
+              <div class="entry__emoji"></div>
+              <div class="entry__emoji"></div>
+              <div class="entry__emoji"></div>
+              <div class="entry__emoji"></div>
+              <div class="entry__emoji"></div>
+            </div>
+            <mat-form-field>
+              <input type="text"
+                     maxlength="160"
+                     matInput
+                     placeholder="Note"
+                     class="entry__container-input entry__container-input--quick">
+            </mat-form-field>
+
+          </div>
+        </mat-card>
+      </ng-container>
+      <!-- ./ Journal Entry Input--quick  -->
+
+      <!-- Journal Entry Input--full  -->
+      <ng-container *ngIf="!isQuickEntry">
+      	<mat-toolbar color="primary">
+      	  <h2 class="entry__container-name">Full Entry</h2>
+      	</mat-toolbar>
+      	<mat-card>
+      	  <div class="entry__container entry__container--full">
+      	    <div class="entry__container-emojis entry__container-emojis--full">
+      	      <div class="entry__emoji"></div>
+      	      <div class="entry__emoji"></div>
+      	      <div class="entry__emoji"></div>
+      	      <div class="entry__emoji"></div>
+      	      <div class="entry__emoji"></div>
+      	    </div>
+      	    <mat-form-field>
+      	      <textarea type="text"
+      	             maxlength="160"
+      	             matInput
+      	             placeholder="What are your thoughts?"
+      	             class="entry__container-input entry__container-input--full"></textarea>
+      	    </mat-form-field>
+      	  </div>
+      	</mat-card>
+      </ng-container>
+      <!-- ./ Journal Entry Input--full  -->
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-<mat-tab-group>
-  <mat-tab label="First"> Life </mat-tab>
-  <mat-tab label="Second"> Job </mat-tab>
-  <mat-tab label="Third"> To Do </mat-tab>
-</mat-tab-group>
-<router-outlet></router-outlet>
