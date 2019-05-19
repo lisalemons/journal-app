@@ -1,0 +1,25 @@
+<!-- Journal Entries--render -->
+<mat-toolbar color="primary">
+  <span>Past Entries</span>
+</mat-toolbar>
+<mat-card class="entry__container entry__container--render">
+
+  <mat-tab-group>
+    <mat-tab  *ngFor="let entry of entries">
+      <div class="entry__render">
+        <ng-template mat-tab-label>{{ entry.category }}</ng-template>
+        <h3 class="entry__title"><strong>Date: </strong> {{ entry.date }} </h3>
+        <h3 class="entry__title"><strong>Title: </strong> {{ entry.title }}</h3>
+        <div class="entry__text">
+          {{ entry.entry }}
+        </div>
+        <mat-list class="entry__list" *ngIf="entry.listItems">
+          <mat-list-item *ngFor="let listItem of entry.listItems" class="list-item">
+            <mat-checkbox color="primary" [checked]="listItem.done">{{ listItem.title }}</mat-checkbox>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+<!-- ./ Journal Entries--render -->

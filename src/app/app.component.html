@@ -4,64 +4,11 @@
       Katie's Journal
     </title>
 
-    <!-- Journal Entries--render -->
-    <mat-toolbar color="primary">
-        <span>Past Entries</span>
-      </mat-toolbar>
-    <mat-card class="journal__container journal__container--render">
+    <journal-entry-render>
 
-      <mat-tab-group>
-        <mat-tab label="Life">
-          <div class="entry__render">
-            <h3 class="entry__title"><strong>Date: </strong> 03/34/2019 </h3>
-            <h3 class="entry__title"><strong>Title: </strong> Life is good</h3>
-          </div>
-        </mat-tab>
-        <mat-tab label="Job">
-          <div class="entry__render">
-            <h3 class="entry__title"><strong>Date: </strong> 03/34/2019 </h3>
-            <h3 class="entry__title"><strong>Title: </strong> Retirement is the goal! </h3>
-            <p class="entry__text">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, consequatur fugiat, pariatur, dolorum
-              illo quae nihil reprehenderit aperiam suscipit nam et hic minima quam repudiandae a facere deleniti eaque
-              ea.
-            </p>
-            <p class="entry__text">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, consequatur fugiat, pariatur, dolorum
-              illo quae nihil reprehenderit aperiam suscipit nam et hic minima quam repudiandae a facere deleniti eaque
-              ea.
-            </p>
-          </div>
-        </mat-tab>
-        <mat-tab label="Love">
-          <div class="entry__render">
-            <h3 class="entry__title"><strong>Date: </strong> 03/34/2019 </h3>
-            <h3 class="entry__title"><strong>Title: </strong> I love my boos </h3>
-          </div>
-        </mat-tab>
-        <mat-tab label="To Do">
-          <div class="entry__render">
-            <h3 class="entry__title"><strong>Date: </strong> 03/34/2019 </h3>
-            <h3 class="entry__title"><strong>Title: </strong> Today I saw </h3>
-            <ul class="entry__text todo__list-items">
-              <li class="list-item">
-                <mat-checkbox></mat-checkbox> Feed Cats
-              </li>
-              <li class="list-item">
-                <mat-checkbox></mat-checkbox> Feed Self
-              </li>
-              <li class="list-item">
-                <mat-checkbox></mat-checkbox> Feed Lisa
-              </li>
-            </ul>
-          </div>
-        </mat-tab>
-      </mat-tab-group>
-    </mat-card>
-    <!-- ./ Journal Entries--render -->
-
+    </journal-entry-render>
     <!-- Journal Entry Input -->
-    <div class="journal__container journal__container--entry">
+    <div class="entry__container entry__container--input">
       <!-- Journal Entry Toggle -->
       <mat-slide-toggle [checked]="isQuickEntry"
                         color="primary"

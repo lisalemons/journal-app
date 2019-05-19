@@ -5,8 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from '../app/components/material.module';
-
-
+import { ComponentModule } from './components/component.module';
 
 @NgModule({
   declarations: [
@@ -16,9 +15,12 @@ import { MaterialModule } from '../app/components/material.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule,
+    MaterialModule, // TODO remove after componentizing
+    ComponentModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

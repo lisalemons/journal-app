@@ -1,0 +1,48 @@
+{
+  "entries": [
+    {
+      "id": 0,
+      "date": "03/25/2019",
+      "category": "Life",
+      "title": "Life is good",
+      "entry": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, consequatur fugiat, pariatur, dolorum illo quae nihil reprehenderit aperiam suscipit nam et hic minima quam repudiandae a facere deleniti eaque ea."
+    },
+    {
+      "id": 1,
+      "date": "03/25/2019",
+      "category": "Job",
+      "title": "Retirement is the goal!",
+      "entry": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, consequatur fugiat, pariatur, dolorum illo quae nihil reprehenderit aperiam suscipit nam et hic minima quam repudiandae a facere deleniti eaque ea."
+    },
+    {
+      "id": 2,
+      "date": "03/25/2019",
+      "category": "Boos",
+      "title": "I love my boos",
+      "entry": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, consequatur fugiat, pariatur, dolorum illo quae nihil reprehenderit aperiam suscipit nam et hic minima quam repudiandae a facere deleniti eaque ea."
+    },
+    {
+      "id": 3,
+      "date": "03/25/2019",
+      "category": "To Dos",
+      "title": "To Do List",
+      "listItems": [
+        {
+          "id": 0,
+          "title": "Feed Cats",
+          "done": true
+        },
+        {
+          "id": 2,
+          "title": "Feed Self",
+          "done": false
+        },
+        {
+          "id": 2,
+          "title": "Feed Lisa",
+          "done": false
+        }
+      ]
+    }
+  ]
+}
