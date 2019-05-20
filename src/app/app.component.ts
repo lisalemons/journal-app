@@ -43,7 +43,9 @@ export class AppComponent implements OnInit {
         )
       );
 
-    this.snackBar.open("Your post has been added!", "Close");
+    this.snackBar.open("Your post has been added!", "Close", {
+      duration: 2000,
+    });
     console.log(this.snackBar);
   }
 }

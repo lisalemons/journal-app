@@ -7,7 +7,6 @@
   <mat-toolbar color="primary" class="flex-container">
     <h2 class="entry__container-name">{{ isQuickEntry ? 'Quick' : 'Full' }} Entry</h2>
     <mat-slide-toggle [checked]="isQuickEntry"
-        color="accent"
         (change)="isQuickEntry = !isQuickEntry">
     </mat-slide-toggle>
   </mat-toolbar>

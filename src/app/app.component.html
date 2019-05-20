@@ -6,11 +6,11 @@
 
     <journal-entry-render [entries]="entries"
                           (categoryChange)="updateCategory($event)"
-                          class="app__component">
+                          class="app__component mat-elevation-z3">
     </journal-entry-render>
     <journal-entry-input (submit)="renderEntry($event)"
                          [category]="selectedCategory"
-                         class="app__component">
+                         class="app__component mat-elevation-z3">
     </journal-entry-input>
   </div>
 </div>
