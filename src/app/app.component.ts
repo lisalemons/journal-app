@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Entry } from '../app/models/entry';
 import entriesData from '../assets/posts.json';
+import { MatSnackBar } from '@angular/material';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +13,8 @@ export class AppComponent implements OnInit {
   title = 'katies-journal-app';
   entries: Entry[] = [];
   selectedCategory: string = "Life";
+
+   constructor(private snackBar: MatSnackBar) {}
 
   ngOnInit() {
     console.log('entry render init', this.entries);
@@ -39,6 +43,7 @@ export class AppComponent implements OnInit {
         )
       );
 
-    console.log(this.entries);
+    this.snackBar.open("Your post has been added!", "Close");
+    console.log(this.snackBar);
   }
 }

@@ -1,8 +1,16 @@
+@import '../../styles/variables';
 .entry {
   &__container {
     &--render {
       max-height: 50vh;
       overflow: auto;
+    }
+  }
+
+  &__render {
+    padding: 1em;
+    &:nth-child(even) {
+      background: $light-gray;
     }
   }
 }
