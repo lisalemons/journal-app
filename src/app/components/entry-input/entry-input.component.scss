@@ -1,0 +1,15 @@
+.entry {
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    &-input {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__submit {
+    border-radius: 0;
+  }
+}

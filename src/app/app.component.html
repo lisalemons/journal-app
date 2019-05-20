@@ -4,70 +4,13 @@
       Katie's Journal
     </title>
 
-    <journal-entry-render>
-
+    <journal-entry-render [entries]="entries"
+                          (categoryChange)="updateCategory($event)"
+                          class="app__component">
     </journal-entry-render>
-    <!-- Journal Entry Input -->
-    <div class="entry__container entry__container--input">
-      <!-- Journal Entry Toggle -->
-      <mat-slide-toggle [checked]="isQuickEntry"
-                        color="primary"
-                        (change)="isQuickEntry = !isQuickEntry">
-      {{ isQuickEntry ? 'Quick' : 'Full' }} Entry
-      </mat-slide-toggle>
-      <!-- ./ Journal Entry Toggle -->
-      <!-- Journal Entry Input--quick  -->
-      <ng-container *ngIf="isQuickEntry">
-        <mat-toolbar color="primary">
-          <h2 class="entry__container-name">Quick Entry</h2>
-        </mat-toolbar>
-        <mat-card>
-          <div class="entry__container entry__container--quick">
-            <div class="entry__container-emojis entry__container-emojis--quick">
-              <div class="entry__emoji"></div>
-              <div class="entry__emoji"></div>
-              <div class="entry__emoji"></div>
-              <div class="entry__emoji"></div>
-              <div class="entry__emoji"></div>
-            </div>
-            <mat-form-field>
-              <input type="text"
-                     maxlength="160"
-                     matInput
-                     placeholder="Note"
-                     class="entry__container-input entry__container-input--quick">
-            </mat-form-field>
-
-          </div>
-        </mat-card>
-      </ng-container>
-      <!-- ./ Journal Entry Input--quick  -->
-
-      <!-- Journal Entry Input--full  -->
-      <ng-container *ngIf="!isQuickEntry">
-      	<mat-toolbar color="primary">
-      	  <h2 class="entry__container-name">Full Entry</h2>
-      	</mat-toolbar>
-      	<mat-card>
-      	  <div class="entry__container entry__container--full">
-      	    <div class="entry__container-emojis entry__container-emojis--full">
-      	      <div class="entry__emoji"></div>
-      	      <div class="entry__emoji"></div>
-      	      <div class="entry__emoji"></div>
-      	      <div class="entry__emoji"></div>
-      	      <div class="entry__emoji"></div>
-      	    </div>
-      	    <mat-form-field>
-      	      <textarea type="text"
-      	             maxlength="160"
-      	             matInput
-      	             placeholder="What are your thoughts?"
-      	             class="entry__container-input entry__container-input--full"></textarea>
-      	    </mat-form-field>
-      	  </div>
-      	</mat-card>
-      </ng-container>
-      <!-- ./ Journal Entry Input--full  -->
-    </div>
+    <journal-entry-input (submit)="renderEntry($event)"
+                         [category]="selectedCategory"
+                         class="app__component">
+    </journal-entry-input>
   </div>
 </div>

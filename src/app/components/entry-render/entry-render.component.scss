@@ -1,0 +1,8 @@
+.entry {
+  &__container {
+    &--render {
+      max-height: 50vh;
+      overflow: auto;
+    }
+  }
+}

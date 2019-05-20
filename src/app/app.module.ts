@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from '../app/components/material.module';
-import { ComponentModule } from './components/component.module';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { ComponentModule } from './components/component.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule, // TODO remove after componentizing
-    ComponentModule,
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [

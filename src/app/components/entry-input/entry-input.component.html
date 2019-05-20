@@ -1,0 +1,64 @@
+<!-- Journal Entry Input -->
+<div class="entry__container entry__container--input" *ngIf="entry.category !== 'To Dos'">
+  <!-- Journal Entry Toggle -->
+
+  <!-- ./ Journal Entry Toggle -->
+  <!-- Journal Entry Input--quick  -->
+  <mat-toolbar color="primary" class="flex-container">
+    <h2 class="entry__container-name">{{ isQuickEntry ? 'Quick' : 'Full' }} Entry</h2>
+    <mat-slide-toggle [checked]="isQuickEntry"
+        color="accent"
+        (change)="isQuickEntry = !isQuickEntry">
+    </mat-slide-toggle>
+  </mat-toolbar>
+  <mat-card>
+    <div class="entry__container entry__container--{{ isQuickEntry ? 'quick' : 'full' }}">
+      <div class="entry__container-emojis entry__container-emojis--{{ isQuickEntry ? 'quick' : 'full' }}">
+        <div class="entry__emoji"></div>
+        <div class="entry__emoji"></div>
+        <div class="entry__emoji"></div>
+        <div class="entry__emoji"></div>
+        <div class="entry__emoji"></div>
+      </div>
+      <mat-form-field class="entry__container-input">
+        <input type="text"
+              matInput
+              placeholder="Title"
+              [(ngModel)]="entry.title">
+      </mat-form-field>
+      <mat-form-field *ngIf="isQuickEntry" class="entry__container-input entry__container-input--quick">
+        <input type="text"
+               maxlength="160"
+               matInput
+               placeholder="Note"
+               [(ngModel)]="entry.entry"
+               >
+      </mat-form-field>
+      <mat-form-field *ngIf="!isQuickEntry" class="entry__container-input entry__container-input--full">
+        <textarea type="text"
+                  maxlength="160"
+                  matInput
+                  cdkTextareaAutosize
+                  [(ngModel)]="entry.entry"
+                  placeholder="What are your thoughts?"></textarea>
+      </mat-form-field>
+    </div>
+  </mat-card>
+  <button
+    mat-raised-button
+    color="primary"
+    class="entry__submit"
+    (click)="onSubmit()">Submit</button>
+</div>
+<ng-container *ngIf="entry.category === 'To Dos'">
+  <mat-toolbar>
+    <h2 class="entry__container-name">Lisa's Secret To Do List</h2>
+  </mat-toolbar>
+    <mat-card>
+      <mat-list>
+        <mat-list-item><mat-checkbox>Finish the To Do code</mat-checkbox></mat-list-item>
+      </mat-list>
+    </mat-card>
+</ng-container>
+
+<!-- Journal Entry Input -->
